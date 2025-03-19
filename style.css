@@ -169,3 +169,27 @@ ul {
     -webkit-text-fill-color: transparent;
   }
   
+
+/* Aseguramos que cada elemento de la lista tenga position: relative */
+.name-list li {
+    position: relative;
+    padding-right: 30px; /* espacio para la "x" */
+  }
+  
+  /* Estilos para el botón de borrado */
+  .delete-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  

@@ -32,9 +32,28 @@ function actualizarLista() {
   const listaElement = document.getElementById("listaAmigos");
   listaElement.innerHTML = "";
 
-  listaAmigos.forEach(amigo => {
+  listaAmigos.forEach((amigo, index) => {
+    // Crea el elemento de lista y agrega el nombre
     const li = document.createElement("li");
     li.textContent = amigo;
+
+    // Crea el botón de borrado (la "x")
+    const deleteBtn = document.createElement("span");
+    deleteBtn.textContent = "×";
+    deleteBtn.classList.add("delete-button");
+
+    // Al hacer clic, se elimina el amigo del array y se actualiza la lista
+    deleteBtn.addEventListener("click", function(e) {
+      // Evitar que el clic se propague si hay otros eventos
+      e.stopPropagation();
+      listaAmigos.splice(index, 1);
+      actualizarLista();
+    });
+
+    // Agrega el botón de borrado al elemento li
+    li.appendChild(deleteBtn);
+
+    // Añade el elemento li a la lista
     listaElement.appendChild(li);
   });
 }
