@@ -58,7 +58,7 @@ function sortearAmigo() {
   resultadoElement.innerHTML = "";
 
   const li = document.createElement("li");
-  li.textContent = `🎉 ¡El amigo secreto es: ${amigoSeleccionado}!`;
-
+  li.innerHTML = `🎉 ¡El amigo secreto es: <span class="rainbow-text">${amigoSeleccionado}</span>!`;
   resultadoElement.appendChild(li);
+
 }
